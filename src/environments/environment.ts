@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apikey = "",
   apiUrl:"http://quotes.stormconsultancy.co.uk/random.json"
 };
 
