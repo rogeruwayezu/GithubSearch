@@ -1,7 +1,61 @@
-<div class="container">
-  <app-search-form (search_key)=find($event)></app-search-form>
-  {{goal}}
-</div>
+<app-search-form (search_key)=find($event)></app-search-form>
+<div class="container user">
+  <div class="row justify-content-center coo">
+    <div class="col-md-4">
+      <img src="{{user.avatar_url}}" alt="">
+    </div>
+    <div class="col-md-6" id="users">
+
+      <p class="user-name">
+        {{user.name}}
+      </p>
+      <p class="user-login">
+        <span id="title">Username:</span>&nbsp;&nbsp;{{user.login}}
+      </p>
+      <p class="user-repo">
+        Repositories:&nbsp; {{user.public_repos}}
+      </p>
+      <p class="user-location">
+        <i class="fas fa-map-marker-alt"></i>&nbsp;{{user.location}}
+      </p>
+      <p class="user-followers">
+        Followers:&nbsp;{{user.followers}}&nbsp;&nbsp;Following:&nbsp;{{user.following}}
+      </p>
+      <p class="user-date">
+        Created on:&nbsp;&nbsp;{{user.created_at|date}}
+      </p>
+    </div>
+  </div>
+  &nbsp;
+  &nbsp;
+  <hr>
   
+  <div class="container " appGitUser>
+    <h2 class="title"><i
+        class="fas fa-chevron-circle-down animate__animated animate__bounce animate__faster"></i>Repositories
+    </h2>
+    <hr class='tot'>
+    <div class="container repositories ">
+  
+      <div class="card-columns">
+        <div class="card text-center rep" *ngFor="let rep of repos">
+          <div class="card-body">
+            <p id='nam'>{{rep.name}}</p>
+            <p id='des'>{{rep.description}}</p>
+            <p id=lang><i class="fas fa-circle"></i>{{rep.language}}</p>
+            <a id='link' href="{{rep.html_url}}">&nbsp;&nbsp;{{rep.html_url}}</a>
+            <p class="card-text"><small class="text-muted">Last
+                updated:&nbsp;{{rep.updated_at|reposDate}}&nbsp;ago</small></p>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
+<footer class="text-muted text-center"><small>&copy;2020 Roger Uwayezu</small></footer>
+
 
 

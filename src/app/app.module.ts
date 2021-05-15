@@ -11,20 +11,29 @@ import { DisplayResultsComponent } from './display-results/display-results.compo
 // Importing routing modules
 import {RoutingModule} from './routing/routing.module';
 import { UserComponent } from './user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReposDatePipe } from './repos-date.pipe';
+import { ToggleReposDirective } from './toggle-repos.directive';
 
+//fontawesome
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     DisplayResultsComponent,
-    UserComponent
+    UserComponent,
+    ReposDatePipe,
+    ToggleReposDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RoutingModule
+    HttpClientModule,
+    RoutingModule,
+    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
